@@ -40,35 +40,6 @@
 <todo>ee</todo>
 </div>
 <script type="text/javascript" class="silex-script">
-var comp=Vue.component('todo', {
-  data: function () {
-    return {
-      something: false,
-	  msg:'ttttttttt',
-	  truc:'eeeee'
-    }
-  },
-   computed: {
-    // a computed getter
-    test: function () {
-      // `this` points to the vm instance
-      return this.truc;
-    }
-  },
-  methods: {
-        reverseMessage: function() {
-		axios.get('https://api.coindesk.com/v1/bpi/currentprice.json').then(response => (this.msg = response));
-			this.msg="tttr";
-        }
-      },
-  mounted(){
-    var scriptTag = document.createElement("script");
-      scriptTag.src = "https://unpkg.com/axios@0.2.1/dist/axios.min.js";
-      scriptTag.id = "axios";
-      document.getElementsByTagName('head')[0].appendChild(scriptTag);
-  },
-  template: "<div><h2>Hello {{ msg }}</h2> <h3>{{ test }} eueu</h3>  <button  v-on:click=\"reverseMessage()\">test </button></div>"
-})
 
 var vueApp = new Vue({
   el: '#main',
